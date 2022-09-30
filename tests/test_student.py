@@ -7,12 +7,15 @@ def test_init():
     name = "Ada Lovelace"
     level = "sophomore"
     courses = ["mathematics", "foundations of computing"]
+    student_courses = None
 
     ada = create_student(name, level, courses)
+    grace = create_student(name, level, student_courses)
 
     assert ada["name"] == name
     assert ada["level"] == level
     assert ada["courses"] == courses
+    assert grace["courses"] == []
 
 def test_add_class():
     new_class = 'Intro to Feminism'
@@ -43,8 +46,10 @@ def test_get_student_with_more_classes():
         "sophomore",
         ["mathematics", "foundations of computing"]
     )
+    
+    assert get_student_with_more_classes(charles, ada) == ada
+    assert get_student_with_more_classes(ada, charles) == ada
 
-    # TODO: write assertions
 
 
 # TODO: Write additional tests to reach 100% test coverage

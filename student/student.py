@@ -1,6 +1,6 @@
 def create_student(name, level, courses):
     if not courses:
-        corses = []
+        courses = []
 
     return {
         "name": name,
@@ -22,5 +22,5 @@ def summary(student):
 
 def get_student_with_more_classes(student_a, student_b):
     if get_num_classes(student_a) > get_num_classes(student_b):
-        return student_b
+        return student_a
     return student_b
